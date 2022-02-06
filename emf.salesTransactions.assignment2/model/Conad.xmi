@@ -5,12 +5,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:assignment2="http://www.sales.org/assignment2"
     xsi:schemaLocation="http://www.sales.org/assignment2 /emf.salesTransactions.assignment2/model/assignment2.ecore"
-    name="Conad Supermarket"
+    name="Conad"
     codice="WER678UHNM09I">
-  <address street="Via Albert Sabin"
-      city="Roma"
+  <address street="Via Enrico Fermi, 1, 67100"
+      city="L'Aquila"
       country="Italy"
-      telephone="39 354 467 4567"/>
+      telephone="+39 0862 313433"/>
   <store name="Mian">
     <item name="Pasta"
         code="IT-00001"
@@ -19,6 +19,14 @@
         availableNumber="200.0">
       <unitPrice
           sellingPrice="2.5"/>
+    </item>
+    <item name="Dove"
+        code="IT-00002"
+        batch="B-00002"
+        description="Soap"
+        availableNumber="1000.0">
+      <unitPrice
+          sellingPrice="2.1"/>
     </item>
   </store>
   <transaction
@@ -41,5 +49,41 @@
     <card cardHolder="//@transaction.0/@customer"
         cardNumber="3435-2323-4567-8657"
         expiryDate="09/22"/>
+  </transaction>
+  <transaction
+      transactionNumber="CS-00002-22"
+      issuedDate="0018-06-03T00:00:00.000+0200"
+      transactionType="CreditSales"
+      paymentMethod="Card">
+    <customer
+        name="Shrawan"
+        surName="Bishowkarma"
+        identityNumber="C-00002"
+        phoneNumber="+39 0862 313433"
+        card="//@transaction.1/@card"/>
+    <cashier
+        name="Maliha"
+        surName="Maliha"
+        employeeId="E-00002"/>
+    <lineItem
+        code="Li-00002"
+        quantity="6.0"
+        item="//@store.0/@item.1">
+      <tax taxType="IncomeTax"
+          taxableAmount="5.0"
+          taxAmount="0.5"/>
+      <discount
+          percentage="10.0"
+          amount="0.23"/>
+      <additionalCharge
+          serviceCharge="0.33"/>
+    </lineItem>
+    <lineItem
+        code="Li-00003"
+        quantity="10.0"
+        item="//@store.0/@item.0"/>
+    <card cardHolder="//@transaction.1/@customer"
+        cardNumber="2323-3455-5677-4533"
+        expiryDate="09/2029"/>
   </transaction>
 </assignment2:Company>
