@@ -12,7 +12,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Company" eSuperTypes="/emf.salesTransactions.assignment2/model/assignment2.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Company" eSuperTypes="#//NamedElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="ValidateCodice"/>
     </eAnnotations>
@@ -20,13 +20,13 @@
       <details key="ValidateCodice" value="codice.size() = 13"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="codice" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="address" eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//Address"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="address" eType="ecore:EClass #//Address"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="store" lowerBound="1" upperBound="-1"
-        eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//Store"
-        containment="true" eOpposite="/emf.salesTransactions.assignment2/model/assignment2.ecore#//Store/company"/>
+        eType="ecore:EClass #//Store"
+        containment="true" eOpposite="#//Store/company"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="transaction" upperBound="-1"
-        eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//Transaction"
+        eType="ecore:EClass #//Transaction"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Address">
@@ -35,13 +35,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="telephone" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Store" eSuperTypes="/emf.salesTransactions.assignment2/model/assignment2.ecore#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="item" upperBound="-1" eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//Item"
-        containment="true" eOpposite="/emf.salesTransactions.assignment2/model/assignment2.ecore#//Item/store"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="company" eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//Company"
-        eOpposite="/emf.salesTransactions.assignment2/model/assignment2.ecore#//Company/store"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Store" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="item" upperBound="-1" eType="ecore:EClass #//Item"
+        containment="true" eOpposite="#//Item/store"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="company" eType="ecore:EClass #//Company"
+        eOpposite="#//Company/store"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="/emf.salesTransactions.assignment2/model/assignment2.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Item" eSuperTypes="#//NamedElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="ItemNotZero"/>
     </eAnnotations>
@@ -61,14 +61,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="batch" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uom" lowerBound="1" eType="ecore:EEnum /emf.salesTransactions.assignment2/model/assignment2.ecore#//UoM"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uom" lowerBound="1" eType="ecore:EEnum #//UoM"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="availableNumber" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="unitPrice" lowerBound="1"
-        eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//Price"
+        eType="ecore:EClass #//Price"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="store" eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//Store"
-        eOpposite="/emf.salesTransactions.assignment2/model/assignment2.ecore#//Store/item"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="store" eType="ecore:EClass #//Store"
+        eOpposite="#//Store/item"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isActive" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
   </eClassifiers>
@@ -76,9 +76,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transactionNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="issuedDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="transactionType" lowerBound="1"
-        eType="ecore:EEnum /emf.salesTransactions.assignment2/model/assignment2.ecore#//TransactionType"/>
+        eType="ecore:EEnum #//TransactionType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="paymentMethod" lowerBound="1"
-        eType="ecore:EEnum /emf.salesTransactions.assignment2/model/assignment2.ecore#//PaymentMethod"/>
+        eType="ecore:EEnum #//PaymentMethod"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="grandTotal" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" volatile="true"
         derived="true">
@@ -93,30 +93,30 @@
         <details key="derivation" value="lineItem -> size()"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="customer" eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//Customer"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="customer" eType="ecore:EClass #//Customer"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cashier" eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//Cashier"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cashier" eType="ecore:EClass #//Cashier"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lineItem" lowerBound="1"
-        upperBound="-1" eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//LineItem"
+        upperBound="-1" eType="ecore:EClass #//LineItem"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="card" eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//Card"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="card" eType="ecore:EClass #//Card"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Person" abstract="true" eSuperTypes="/emf.salesTransactions.assignment2/model/assignment2.ecore#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Person" abstract="true" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="surName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="customer" eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//Customer"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="customer" eType="ecore:EClass #//Customer"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="cashier" eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//Cashier"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cashier" eType="ecore:EClass #//Cashier"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Customer" eSuperTypes="/emf.salesTransactions.assignment2/model/assignment2.ecore#//Person">
+  <eClassifiers xsi:type="ecore:EClass" name="Customer" eSuperTypes="#//Person">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="identityNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="phoneNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="card" eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//Card"
-        eOpposite="/emf.salesTransactions.assignment2/model/assignment2.ecore#//Card/cardHolder"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="card" eType="ecore:EClass #//Card"
+        eOpposite="#//Card/cardHolder"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Cashier" eSuperTypes="/emf.salesTransactions.assignment2/model/assignment2.ecore#//Person">
+  <eClassifiers xsi:type="ecore:EClass" name="Cashier" eSuperTypes="#//Person">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="employeeId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LineItem">
@@ -141,17 +141,17 @@
         <details key="derivation" value="item.unitPrice.sellingPrice * quantity"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="item" lowerBound="1" eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//Item"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tax" eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//Tax"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="item" lowerBound="1" eType="ecore:EClass #//Item"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tax" eType="ecore:EClass #//Tax"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="discount" eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//Discount"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="discount" eType="ecore:EClass #//Discount"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="additionalCharge" eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//AdditionalCharge"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="additionalCharge" eType="ecore:EClass #//AdditionalCharge"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Tax">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="taxType" lowerBound="1"
-        eType="ecore:EEnum /emf.salesTransactions.assignment2/model/assignment2.ecore#//TaxType"/>
+        eType="ecore:EEnum #//TaxType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="taxableAmount" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="taxAmount" lowerBound="1"
@@ -169,8 +169,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Card">
     <eStructuralFeatures xsi:type="ecore:EReference" name="cardHolder" lowerBound="1"
-        eType="ecore:EClass /emf.salesTransactions.assignment2/model/assignment2.ecore#//Customer"
-        eOpposite="/emf.salesTransactions.assignment2/model/assignment2.ecore#//Customer/card"/>
+        eType="ecore:EClass #//Customer"
+        eOpposite="#//Customer/card"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expiryDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
