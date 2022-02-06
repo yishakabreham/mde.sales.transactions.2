@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<assignment2:Company xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:assignment2="http://www.sales.org/assignment2" name="Carefour" codice="CAOUR12094REF">
+  <address street="Via Albert Sabin" city="L'Aquila" country="Italy" telephone="+39 351 879 8225"/>
+  <store name="Reserve Stock">
+    <item name="Dove" code="Itm-0001-22" description="Soap" availableNumber="100.0">
+      <unitPrice sellingPrice="2.2"/>
+    </item>
+  </store>
+</assignment2:Company>
