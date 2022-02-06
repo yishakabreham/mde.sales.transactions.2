@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assignment2:Company
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:assignment2="http://www.sales.org/assignment2"
+    xsi:schemaLocation="http://www.sales.org/assignment2 /emf.salesTransactions.assignment2/model/assignment2.ecore"
+    name="Conad Supermarket"
+    codice="WER678UHNM09I">
+  <address street="Via Albert Sabin"
+      city="Roma"
+      country="Italy"
+      telephone="39 354 467 4567"/>
+  <store name="Mian">
+    <item name="Pasta"
+        code="IT-00001"
+        batch="B-00001"
+        description="Pasta"
+        availableNumber="200.0">
+      <unitPrice
+          sellingPrice="2.5"/>
+    </item>
+  </store>
+  <transaction
+      transactionNumber="CS-00001-22"
+      issuedDate="0017-06-11T00:00:00.000+0200">
+    <customer
+        name="Yishak Abreham"
+        surName="Gebremichael"
+        identityNumber="C-00001"
+        phoneNumber="0912345678"
+        card="//@transaction.0/@card"/>
+    <cashier
+        name="Alex"
+        surName="Peters"
+        employeeId="E-00001"/>
+    <lineItem
+        code="Li-00001"
+        quantity="12.0"
+        item="//@store.0/@item.0"/>
+    <card cardHolder="//@transaction.0/@customer"
+        cardNumber="3435-2323-4567-8657"
+        expiryDate="09/22"/>
+  </transaction>
+</assignment2:Company>

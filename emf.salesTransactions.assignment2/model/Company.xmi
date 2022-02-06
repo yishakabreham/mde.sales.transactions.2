@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assignment2:Company
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:assignment2="http://www.sales.org/assignment2"
+    xsi:schemaLocation="http://www.sales.org/assignment2 /emf.salesTransactions.assignment2/model/assignment2.ecore"
+    name="Conad Supermarket"
+    codice="CND000234UYGF">
+  <address street="Via Albert Sabin"
+      city="L'Aquila"
+      country="Italy"
+      telephone="+39 352 456 8909"/>
+  <store name="Main Store">
+    <item name="Dove"
+        code="IT-00001-22"
+        batch="B-00001-22"
+        description="Soap"
+        availableNumber="100.0">
+      <unitPrice
+          sellingPrice="2.4"/>
+    </item>
+    <item name="Sugar 500g"
+        code="IT-00002-22"
+        batch="B-00002-22"
+        description="Table Sugar"
+        uom="KG"
+        availableNumber="200.0">
+      <unitPrice
+          sellingPrice="1.56"/>
+    </item>
+  </store>
+  <transaction
+      transactionNumber="CS-00001-22"
+      issuedDate="0017-05-03T00:00:00.000+0200"
+      paymentMethod="Card">
+    <customer
+        name="Yishak Abreham"
+        surName="Gebremichael"
+        identityNumber="P-00001"
+        phoneNumber="0914569653"
+        card="//@transaction.0/@card"/>
+    <cashier
+        name="Shrawan "
+        surName="Bishowkarma"
+        employeeId="E-00001"/>
+    <lineItem
+        code="Li-00001-22"
+        quantity="3.0"
+        item="//@store.0/@item.0"/>
+    <lineItem
+        code="Li-00002-22"
+        quantity="20.0"
+        item="//@store.0/@item.0"/>
+    <card cardHolder="//@transaction.0/@customer"
+        cardNumber="2389-2232-1212-4343"
+        expiryDate="09/2030"/>
+  </transaction>
+  <transaction
+      transactionNumber="CS-00002-22"
+      issuedDate="0017-05-03T00:00:00.000+0200"
+      transactionType="CreditSales">
+    <customer
+        name="Yonatan Abreham"
+        surName="Gebremichael"
+        identityNumber="C-00002-22"
+        phoneNumber="0937023107"
+        card="//@transaction.1/@card"/>
+    <cashier
+        name="John"
+        surName="Peter"
+        employeeId="E-00002-22"/>
+    <lineItem
+        code="Li-00002-22"
+        quantity="5.0"
+        item="//@store.0/@item.1">
+      <tax taxableAmount="5.8"/>
+      <discount
+          percentage="10.0"/>
+      <additionalCharge
+          serviceCharge="0.25"/>
+    </lineItem>
+    <lineItem
+        code="Li-00004-22"
+        quantity="2.0"
+        item="//@store.0/@item.0"/>
+    <card cardHolder="//@transaction.1/@customer"
+        cardNumber="1234-3234-5434-3432"
+        expiryDate="12/2027"/>
+  </transaction>
+  <transaction
+      transactionNumber="CS-00003-22"
+      issuedDate="0017-05-03T00:00:00.000+0200">
+    <customer
+        name="Abreham Gebremichael"
+        surName="Arthur"
+        identityNumber="C-00003-22"
+        phoneNumber="09334323432"
+        card="//@transaction.2/@card"/>
+    <lineItem
+        code="Li-00005-22"
+        quantity="10.0"
+        item="//@store.0/@item.0"/>
+    <card cardHolder="//@transaction.2/@customer"
+        cardNumber="2324-2142-4214-5356"
+        expiryDate="22/2032"/>
+  </transaction>
+</assignment2:Company>
