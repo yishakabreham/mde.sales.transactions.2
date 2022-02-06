@@ -4,6 +4,7 @@
     <semanticResources>assignment2.ecore</semanticResources>
     <semanticResources>assignment2.genmodel</semanticResources>
     <semanticResources>Conad.xmi</semanticResources>
+    <semanticResources>Carrefour.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_66HgEIUTEeyXMedPpAM4QA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_66i94IUTEeyXMedPpAM4QA" name="assignment2" repPath="#_66fTgIUTEeyXMedPpAM4QA" changeId="84641024-3e64-417e-b570-953376459b5a">
